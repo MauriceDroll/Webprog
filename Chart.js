@@ -12,14 +12,7 @@ var chart = new Chart(ctx, {
             borderColor: 'rgb(255, 99, 132)',
             data:Array.apply(null, new Array(12)).map(Number.prototype.valueOf, 400),
             fill:false,
-        }, {
-            label: 'Zucker',
-            backgroundColor: 'rgb(0,0,255)',
-            borderColor: 'rgb(0,0,255)',
-            data:[0,100,200,300,450,100,350],
-            fill:false,
-            display: 'auto',
-        },
+        }, 
         {
             label: 'zug. Koffein',
             backgroundColor: 'rgb(0,255,0)',
@@ -29,6 +22,30 @@ var chart = new Chart(ctx, {
 
         }
     ]
+    },
+
+
+    // Configuration options go here
+    options: {}
+});
+var sec_Chart= document.getElementById('secondChart').getContext('2d');
+var sec_chart = new Chart(secondChart, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+        labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        datasets: [ {
+            label: 'Zucker',
+            backgroundColor: 'rgb(0,0,255)',
+            borderColor: 'rgb(0,0,255)',
+            data:[0,100,200,300,450,100,350],
+            fill:false,
+            display: 'auto',
+        }
+        
+        ]
     },
 
 
