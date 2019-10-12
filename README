@@ -1,1 +1,7 @@
-Dies ist eine Readme-Datei des Webprog-Repositories und die ist toll.
+Projekt Setup:
+    1. Schritt: Projektordner in Entwicklungsumgebung öffnen
+    2. Schritt: Überprüfen ob npm installiert ist mit npm -v im terminal --> falls nicht https://nodejs.org/de/
+    3. Schritt: Im Terminal npm install live-server ausführen
+
+Webserver Start: live-server
+Webserver Stop: strg + c und dann j oder y

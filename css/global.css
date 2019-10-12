@@ -1,0 +1,29 @@
+body {
+    /*background-color: rgba(0,255,127, 0.3);*/
+    background-color: lightgray;
+    font-family: 'Lato', sans-serif;
+}
+.nav-item {
+    color: black;
+    margin: 1rem 1rem;
+    font-size: 16pt;
+}
+
+.navbar {
+    background-color: #ad8762;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.navcontainer {
+
+}
+
+.navicon {
+    height: 50px;
+    width: 50px;
+}
+
+a:hover {
+    color: black;
+    text-decoration: none;
+}
