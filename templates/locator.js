@@ -4,6 +4,6 @@ const locator = '<div>' +
         '<div class="input-group-prepend">' +
             '<span class="input-group-text"><img src="../assets/search-24px.svg"></span>' +
         '</div>' +
-        '<input id="locationinput" type="text" class="form-control" onsubmit="updatelocation()">' +
+        '<input id="locationinput" type="text" class="form-control" onkeyup="updatelocation()">' +
     '</div>' +
     '<style onload="initialize(new google.maps.LatLng(49.026747, 8.385419))"></style>';
