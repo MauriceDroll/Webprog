@@ -44,7 +44,7 @@ function callback(results, status) {
 }
 
 function updatelocation() {
-    if (event.key === 'Enter') {
+    if (event.key === 'Enter' || event.type === 'click') {
         let location = document.getElementById('locationinput').value;
 
         fetch('https://maps.googleapis.com/maps/api/geocode/json?address=' + location + '&key=AIzaSyCIst2p6GS6U5TAFAKYYR1XK1vuPrPsro0').then(response => {
