@@ -1,0 +1,28 @@
+.input-group {
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5rem;
+    width: 500px;
+    height: 50px;
+    font-size: 17pt;
+}
+.input-group-text {
+    background-color: white;
+}
+.form-control {
+    height: unset;
+    font-size: unset;
+    border-left: unset;
+}
+.form-control:focus {
+    border-color: #ced4da;
+    box-shadow: unset;
+}
+
+#map {
+    height: 600px;
+    width: 1000px;
+    margin-top: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+}

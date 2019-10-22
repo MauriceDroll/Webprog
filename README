@@ -1,7 +1,7 @@
 Projekt Setup:
     1. Schritt: Projektordner in Entwicklungsumgebung öffnen
     2. Schritt: Überprüfen ob npm installiert ist mit npm -v im terminal --> falls nicht https://nodejs.org/de/
-    3. Schritt: Im Terminal npm install live-server ausführen
+    3. Schritt: Im Terminal npm run build ausführen
 
-Webserver Start: live-server
+Start: npm start
 Webserver Stop: strg + c und dann j oder y
