@@ -1,0 +1,57 @@
+* {
+    
+    padding: 0;
+    box-sizing: border-box;
+  }
+.center{
+  text-align:center;
+}
+.timerHeader {
+  text-align:center;
+  font-size:64px;
+}  
+
+  
+
+  .clock {
+    margin:auto;
+    width:490px;
+    text-align: center;
+    height: 15vh;
+    color: black;
+    font-size: 13vh;
+    font-family: sans-serif;
+    line-height: 20.4vh;
+    display: flex;
+    position: relative;
+    /*background: green;*/
+    overflow: hidden;
+  }
+  
+
+  .clock > div {
+    display: flex;
+  }
+  
+  .tick {
+    line-height: 17vh;
+  }
+  
+  .tick-hidden {
+    opacity: 0;
+  }
+  
+  .move {
+    animation: move linear 1s infinite;
+  }
+  
+  @keyframes move {
+    from {
+      transform: translateY(0vh);
+    }
+    to {
+      transform: translateY(-20vh);
+    }
+  }
+  
+  
