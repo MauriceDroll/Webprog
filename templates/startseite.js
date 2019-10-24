@@ -10,7 +10,7 @@ const startseite = '' +
             '<a onclick="becher()"><img src="../assets/coffee-paper-cup-500x500.png" id="becherimg"></a>' +
             '<a onclick="tasse()"><img src="../assets/White-Mug.png" id="tasseimg"></a>' +
             '<a onclick="thermo()"><img src="../assets/302228-silver.png" id="thermoimg"></a>' +
-            '<a onclick="glass()"><img src="../assets/JDG32.png" id="glassimg"></a>' +
+            '<a onclick="glas()"><img src="../assets/JDG32.png" id="glasimg"></a>' +
         '</div>' +
         '<div class="inputcontainer col-md-9 invisible" id="hidden2">' +
             '<div class="row">' +

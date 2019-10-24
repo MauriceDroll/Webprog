@@ -16,9 +16,9 @@ function thermo() {
     document.getElementById("hidden2").classList.remove("invisible");
 }
 
-function glass() {
+function glas() {
     let behaeltnis = document.getElementById('Behältnis');
-    behaeltnis.value = "Glass";
+    behaeltnis.value = "Glas";
     document.getElementById("hidden2").classList.remove("invisible");
 }
 
