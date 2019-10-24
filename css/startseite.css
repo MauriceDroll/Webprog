@@ -13,8 +13,8 @@
 .inputcontainer {
     align-items: center;
     margin-top: 5rem;
-    width: 50%;
-    margin-left: 25%;
+    max-width: 50%;
+    right: 60px;
 }
 .inputcontainer > .row {
     margin-top: 1rem;
@@ -30,6 +30,74 @@
     padding: .375rem .75rem;
 }
 
+.sahnecontainer > input {
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    height: 40px;
+    line-height: 1.5;
+    padding: .375rem .75rem;
+}
+
+.würfelcontainer > input {
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    height: 40px;
+    line-height: 1.5;
+    padding: .375rem .75rem;
+}
+
+.behältercontainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+    flex-direction: column;
+}
+.behältercontainer > a > img {
+    margin: 1rem 4rem;
+}
+
+.counterbutton {
+    max-width: 10px;
+    border-radius: 100px;
+}
+
+.savecoffeebutton {
+    margin-left: auto;
+    margin-top: 2rem;
+}
+.invisible {
+    visibility: hidden;
+}
+
 label {
     margin-bottom: 0;
+}
+
+#becherimg {
+    height: 100px;
+    width: 100px;
+}
+
+#tasseimg {
+    height: 100px;
+    width: 100px;
+}
+
+#thermoimg {
+    height: 100px;
+    width: 100px;
+}
+
+#glassimg {
+    height: 100px;
+    width: 100px;
+}
+
+#sahnelabel {
+    text-align: right;
+}
+
+#hidden {
+    margin-left: unset;
+    margin-right: unset;
 }
