@@ -173,6 +173,7 @@ function saveCoffee() {
         Kalorien: document.getElementById("Kalorien").value,
         Koffeingehalt: document.getElementById("Koffeingehalt").value,
         Menge: document.getElementById("Menge").value,
+        Preis: document.getElementById("Preis").value,
         Starttemperatur: document.getElementById("Starttemperatur").value,
         Zucker: document.getElementById("Zucker").value,
     };

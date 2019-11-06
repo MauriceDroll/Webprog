@@ -34,6 +34,10 @@ const startseite = '' +
                 '<input type="number" id="Menge" class="col-md-9">' +
             '</div>' +
             '<div class="row">' +
+                '<label for="Preis" class="col-md-3">Preis</label>' +
+                '<input type="number" id="Preis" class="col-md-9">' +
+            '</div>' +
+            '<div class="row">' +
                 '<label for="Starttemperatur" class="col-md-3">Starttemperatur</label>' +
                 '<input type="number" id="Starttemperatur" class="col-md-9">' +
             '</div>' +
