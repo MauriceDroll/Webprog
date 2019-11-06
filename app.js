@@ -5,10 +5,6 @@ const routes = {
     '/statistik' : statistik,
 };
 
-// const firebase = require("firebase");
-// // Required for side-effects
-// require("firebase/firestore");
-
 const rootDiv = document.getElementById('root');
 rootDiv.innerHTML = routes[window.location.pathname];
 
