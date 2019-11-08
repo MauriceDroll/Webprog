@@ -1,24 +1,30 @@
 function becher() {
     let behaeltnis = document.getElementById('Behältnis');
     behaeltnis.value = "Becher";
-    document.getElementById("hidden2").classList.remove("invisible");
+    document.getElementById("hidden3").classList.remove("invisible");
 }
 
 function tasse() {
     let behaeltnis = document.getElementById('Behältnis');
     behaeltnis.value = "Tasse";
-    document.getElementById("hidden2").classList.remove("invisible");
-}
-
-function thermo() {
-    let behaeltnis = document.getElementById('Behältnis');
-    behaeltnis.value = "Thermoskanne";
-    document.getElementById("hidden2").classList.remove("invisible");
+    document.getElementById("hidden3").classList.remove("invisible");
 }
 
 function glas() {
     let behaeltnis = document.getElementById('Behältnis');
     behaeltnis.value = "Glas";
+    document.getElementById("hidden3").classList.remove("invisible");
+}
+
+function smallSize() {
+    let menge = document.getElementById('Menge');
+    menge.value = "250ml";
+    document.getElementById("hidden2").classList.remove("invisible");
+}
+
+function largeSize() {
+    let menge = document.getElementById('Menge');
+    menge.value = "500ml";
     document.getElementById("hidden2").classList.remove("invisible");
 }
 
@@ -175,6 +181,7 @@ function saveCoffee() {
         Menge: document.getElementById("Menge").value,
         Preis: document.getElementById("Preis").value,
         Starttemperatur: document.getElementById("Starttemperatur").value,
+        Umgebungstemperatur: document.getElementById("Umgebungstemperatur").value,
         Zucker: document.getElementById("Zucker").value,
     };
     db.collection("coffee").add({
@@ -184,5 +191,58 @@ function saveCoffee() {
     }).then(document => {
         console.log("Kaffee hinzugefügt");
     });
+    let time = calculate(coffee.Behältnis, coffee.Menge, coffee.Starttemperatur, coffee.Umgebungstemperatur);
     onNavigate('/timer')
+}
+
+function calculate(behaelter, behaeltergroesse, startTemp, ambientTemp) {
+    let thermalConduct;
+    let thickness;
+    let surfaceArea;
+        if (behaelter.equals("Pappbecher")) {
+            thermalConduct = 0.05;
+            thickness = 2;
+            if (behaeltergroesse.equals("250")) {
+                let grundflaeche = 50.27;
+                let schnittflaeche = 24.63;
+                let mantelflaeche = 198.67;
+                surfaceArea = grundflaeche + schnittflaeche + mantelflaeche;
+            }
+            if (behaeltergroesse.equals("500")) {
+                let grundflaeche = 62.21;
+                let schnittflaeche = 26.88;
+                let mantelflaeche = 301.2;
+                surfaceArea = grundflaeche + schnittflaeche + mantelflaeche;
+            }
+        }
+        if (behaelter.equals("Glas")) {
+            thermalConduct = 1;
+            thickness = 2.4;
+            if (behaeltergroesse.equals("250")) {
+                surfaceArea = 175.18;
+            }
+            if (behaeltergroesse.equals("500")) {
+                surfaceArea = 297.54;
+            }
+        }
+        if (behaelter.equals("Tasse")) {
+            thermalConduct = 1.5;
+            thickness = 6;
+            if (behaeltergroesse.equals("250")) {
+                surfaceArea = 175.18;
+            }
+            if (behaeltergroesse.equals("500")) {
+                surfaceArea = 297.54;
+            }
+        }
+        let heatTransfered = (thermalConduct * surfaceArea + (parseInt(startTemp) - parseInt(ambientTemp))) / thickness;
+        let temperatureDiffrenceNeeded = parseInt(startTemp) - parseInt(ambientTemp);
+        let heatRequired;
+        if (behaeltergroesse.equals("250")) {
+            heatRequired = 250 * 4186 * temperatureDiffrenceNeeded;
+        }
+        if (behaeltergroesse.equals("500")) {
+            heatRequired = 500 * 4186 * temperatureDiffrenceNeeded;
+        }
+        return coffeeTime = heatRequired / heatTransfered;
 }

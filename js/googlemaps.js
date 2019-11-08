@@ -52,7 +52,6 @@ function updatelocation() {
                 let lat = parseFloat(res.results[0].geometry.location.lat);
                 let lng = parseFloat(res.results[0].geometry.location.lng);
                 let position = new google.maps.LatLng(lat, lng);
-                console.log(position);
                 initialize(position)
             })
         })
