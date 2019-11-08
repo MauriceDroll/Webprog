@@ -1,5 +1,7 @@
+
 function timeHelper(){
-    var hoursContainer = document.querySelector('.hours')
+
+var hoursContainer = document.querySelector('.hours')
 var minutesContainer = document.querySelector('.minutes')
 var secondsContainer = document.querySelector('.seconds')
 var tickElements = Array.from(document.querySelectorAll('.tick'))
@@ -88,4 +90,56 @@ function timerReachedZero(){
 
 
 setInterval(updateTime, 100)
+setInterval(updateEveryOtherTimer,1000)
+}
+let timerCount=0;
+function addTimer(){
+  if(timerCount==0) {
+    document.getElementById("timer1").textContent=document.getElementById("reminderTime").value;
+    timerCount++
+  }
+  else if(timerCount==1) {
+    document.getElementById("timer2").textContent=document.getElementById("reminderTime").value;
+    timerCount++
+    }
+  else if(timerCount==2) {
+    document.getElementById("timer3").textContent=document.getElementById("reminderTime").value;
+    timerCount++
+    }
+  else if(timerCount>=3){
+    timerCount=3;
+        // Get the snackbar DIV
+  var x = document.getElementById("snackbar");
+
+  // Add the "show" class to DIV
+  x.className = "show";
+
+  // After 3 seconds, remove the show class from DIV
+  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    }
+ }
+function updateEveryOtherTimer(){
+  updateOtherTimer("timer1");
+  updateOtherTimer("timer2");
+  updateOtherTimer("timer3");
+}
+function updateOtherTimer(timerid){
+  let t= document.getElementById(timerid).textContent
+  if(t==null || t=="" || t=="0:0"){
+    if(t=="0:0"){
+      document.getElementById('alert').play();
+      document.getElementById(timerid).textContent=""
+      timerCount--;
+    }
+  }
+  else{
+  let timer1 = document.getElementById(timerid).textContent
+  var date = new Date(0, 0 , 0 , 0 , timer1.split(":")[0] , timer1.split(":")[1] , 0);
+  date = updateDateBy(date,100);
+  
+  document.getElementById(timerid).textContent=date.getMinutes()+":"+date.getSeconds();
+  }
+ }
+function updateDateBy(date,ms){
+  return new Date(0,0,0,date.getHours(),date.getMinutes(),date.getSeconds(),date.getMilliseconds()-ms)
 }
