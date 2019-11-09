@@ -14,7 +14,8 @@
     align-items: center;
     margin-top: 5rem;
     max-width: 50%;
-    right: 60px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .inputcontainer > .row {
     margin-top: 1rem;
@@ -38,6 +39,10 @@
     padding: .375rem .75rem;
 }
 
+.sahnecontainer {
+    align-items: center;
+}
+
 .würfelcontainer > input {
     border: 1px solid #ced4da;
     border-radius: .25rem;
@@ -46,11 +51,14 @@
     padding: .375rem .75rem;
 }
 
+.würfelcontainer {
+    align-items: center;
+}
+
 .behältercontainer {
     display: flex;
     justify-content: center;
     margin-top: 5rem;
-    flex-direction: column;
 }
 .behältercontainer > a > img {
     margin: 1rem 4rem;
@@ -59,7 +67,6 @@
 .mengecontainer {
     display: flex;
     margin-top: 5rem;
-    flex-direction: column;
     justify-content: center;
 }
 
@@ -67,10 +74,7 @@
     background-color: white;
     color: black;
     border: none;
-    height: fit-content;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 100px;
     margin-bottom: 2rem;
 }
 
@@ -101,21 +105,21 @@ label {
     width: 100px;
 }
 
-#thermoimg {
-    height: 100px;
-    width: 100px;
-}
-
 #glasimg {
     height: 100px;
     width: 100px;
 }
 
-#sahnelabel {
-    text-align: right;
-}
-
 #hidden {
     margin-left: unset;
     margin-right: unset;
+}
+
+@media screen and (max-width: 1440px) {
+    /*.würfelcontainer {*/
+    /*    width: 100%;*/
+    /*}*/
+    /*.sahnecontainer {*/
+    /*    width: 100%;*/
+    /*}*/
 }

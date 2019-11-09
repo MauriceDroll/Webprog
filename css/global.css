@@ -1,5 +1,4 @@
 body {
-    /*background-color: rgba(0,255,127, 0.3);*/
     background-color: lightgray;
     font-family: 'Lato', sans-serif;
 }
@@ -21,6 +20,14 @@ body {
 .navicon {
     height: 50px;
     width: 50px;
+}
+
+.active {
+    background-color: #ad8762 !important;
+}
+
+.btn-primary:hover {
+    background-color: #ad8762 !important;
 }
 
 a:hover {

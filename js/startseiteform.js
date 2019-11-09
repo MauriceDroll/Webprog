@@ -20,12 +20,16 @@ function smallSize() {
     let menge = document.getElementById('Menge');
     menge.value = "250ml";
     document.getElementById("hidden2").classList.remove("invisible");
+    document.getElementById("option2").classList.remove("active");
+    document.getElementById("option1").classList.add("active")
 }
 
 function largeSize() {
     let menge = document.getElementById('Menge');
     menge.value = "500ml";
     document.getElementById("hidden2").classList.remove("invisible");
+    document.getElementById("option1").classList.remove("active");
+    document.getElementById("option2").classList.add("active")
 }
 
 function cappuccino() {
