@@ -1,5 +1,5 @@
 let firebaseConfig = {
-//Lukas nach Config fragen
+
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);

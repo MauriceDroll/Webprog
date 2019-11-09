@@ -1,21 +1,21 @@
-const statistik = '' +
-    '<h2>Statistik</h2>' +
-// // Navbar
-//     '<nav class="navbar navbar-expand-lg navbar-dark sticky-top">'+
-//     '<div class="navcontainer">'+
-//         '<img src="assets/coffee.svg" class="navicon">'+
-//         '<a href="#" onclick="onNavigate("/koffein"); return false;" class="nav-item">Koffein</a>'+
-//         '<a href="#" onclick="onNavigate("/zucker"); return false;" class="nav-item">Zucker</a>'+
-//         '<a href="#" onclick="onNavigate("/kalorien"); return false;" class="nav-item">Kalorien</a>'+
-//         '<a href="#" onclick="onNavigate("/kosten"); return false;" class="nav-item">Kosten</a>'+
-//     '</div>'+
-//     '</nav>'+
-// //Navbar_ende
-    
-    '<h2> &Uuml;bersicht über Koffeinkonsum </h2>'+
-    '<canvas id="myChart" width="400" height="400" > 5 </canvas>'+
-    '<br>'+
-    '<h2> &Uuml;bersicht über Zuckerkonsum </h2>'+
-    '<canvas id="secondChart"> </canvas>'+
-    '<style onload= "loadChart()"> </style>'
+const statistik = '' +  
+    '<div id="Buttongroup">'+ 
+    '<button class="btn btn-primary btn-lg" onClick=selectChartType("Koffein") id= koffein> Koffein </button>'+
+    '<button class="btn btn-secondary btn-lg" onClick=selectChartType("Zucker") id= zucker> Zuckergehalt </button>'+
+    '<button class="btn btn-success btn-lg" onClick=selectChartType("Kosten") id= kosten> Kosten </button>'+
+    '<button class="btn btn-danger btn-lg" onClick=selectChartType("Anzahl") id= anzahl> Anzahl </button>'+
+    '</div>'+
+    '<style onload="initalDataLoad()"> </style>'+
+    '<style onload="delete_arrays"> </style>'+
+/*     '<div id="Inputgroup">'+
+    '<h8> Ben. Maximalwerte pro Kategorie'+
+    '<input type = "number" size="10" id= "maxKoffein" </input>'+
+    '<input type = "number" id= "maxZucker" </input>'+
+    '<input type = "number" id= "maxKosten" </input>'+
+    '<input type = "number" id= "maxAnzahl" </input>'+
+    '</div>'+ */
+    '<canvas id="Koffein"> </canvas>'+
+    '<canvas id="Zucker"> </canvas>'+
+    '<canvas id="Kosten"> </canvas>'+
+    '<canvas id="Anzahl"> </canvas>'
     ;
