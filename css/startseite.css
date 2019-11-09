@@ -56,6 +56,24 @@
     margin: 1rem 4rem;
 }
 
+.mengecontainer {
+    display: flex;
+    margin-top: 5rem;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.mengebutton {
+    background-color: white;
+    color: black;
+    border: none;
+    height: fit-content;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+}
+
 .counterbutton {
     max-width: 10px;
     border-radius: 100px;
