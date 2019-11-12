@@ -235,6 +235,7 @@ function saveCoffee() {
             coffee.Zucker = coffee.Zucker - sahne*4;
             coffee.Kalorien = coffee.Kalorien - wuerfel*12;
             coffee.Kalorien = coffee.Kalorien - sahne*12;
+            coffee.Preis = 0;
             console.log(coffee);
             db.collection("coffee").add ({
                 Datum: new Date(),

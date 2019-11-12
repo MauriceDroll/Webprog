@@ -15,7 +15,7 @@ const startseite = '' +
             '<label class="btn btn-primary mengebutton" id="option1">' +
                 '<input type="radio" name="options" autocomplete="off" onclick="smallSize()"> 250ml' +
             '</label>' +
-            '<label class="btn btn-primary mengebutton" id="option2">' +
+            '<label class="btn btn-primary mengebutton" id="option2" data-toggle="tooltip" data-placement="right" title="Kleiner Kaffee wird doppelt gespeichert (abzüglich Zucker- oder Sahnezusatz und ohne Preis)">' +
                 '<input type="radio" name="options" autocomplete="off" onclick="largeSize()"> 500ml' +
             '</label>' +
         '</div>' +
