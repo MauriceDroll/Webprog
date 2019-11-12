@@ -18,15 +18,15 @@ function glas() {
 
 function smallSize() {
     let menge = document.getElementById('Menge');
-    menge.value = "250ml";
+    menge.value = "250";
     document.getElementById("hidden2").classList.remove("invisible");
     document.getElementById("option2").classList.remove("active");
-    document.getElementById("option1").classList.add("active")
+    document.getElementById("option1").classList.add("active");
 }
 
 function largeSize() {
     let menge = document.getElementById('Menge');
-    menge.value = "500ml";
+    menge.value = "500";
     document.getElementById("hidden2").classList.remove("invisible");
     document.getElementById("option1").classList.remove("active");
     document.getElementById("option2").classList.add("active")
@@ -176,6 +176,39 @@ function removeSahne() {
     document.getElementById('Kaffeesahne').value = sahne;
 }
 
+function validate() {
+    let valid = true;
+    let starttemp = document.getElementById("Starttemperatur").value;
+    if (starttemp < 50 || starttemp > 100 || starttemp === "") {
+        document.getElementById("Starttemperatur").classList.add("inputfalse");
+        alert("Starttemperatur muss zwischen 50°C und 100°C liegen!");
+        valid = false;
+    } else {
+        document.getElementById("Starttemperatur").classList.remove("inputfalse")
+    }
+
+    let ambienttemp = document.getElementById("Umgebungstemperatur").value;
+    if (ambienttemp < 0 || ambienttemp > 50 || ambienttemp === "") {
+        document.getElementById("Umgebungstemperatur").classList.add("inputfalse");
+        alert("Umgebungstemperatur muss zwischen 0°C und 50°C liegen!");
+        valid = false;
+    } else {
+        document.getElementById("Umgebungstemperatur").classList.remove("inputfalse")
+    }
+
+    let preis = document.getElementById("Preis").value;
+    if (preis <= 0 || preis === "") {
+        document.getElementById("Preis").classList.add("inputfalse");
+        valid = false;
+    } else {
+        document.getElementById("Preis").classList.remove("inputfalse")
+    }
+
+    if (valid) {
+        saveCoffee()
+    }
+}
+
 function saveCoffee() {
     let coffee = {
         Sorte: document.getElementById("Sorte").value,
@@ -187,13 +220,28 @@ function saveCoffee() {
         Starttemperatur: document.getElementById("Starttemperatur").value,
         Umgebungstemperatur: document.getElementById("Umgebungstemperatur").value,
         Zucker: document.getElementById("Zucker").value,
+        Zuckerwürfel: document.getElementById("Zuckerwürfel").value,
+        Kaffeesahne: document.getElementById("Kaffeesahne").value,
     };
     db.collection("coffee").add({
         Datum: new Date(),
         Kaffee: coffee,
         User: "Maurice"
     }).then(document => {
-        console.log("Kaffee hinzugefügt");
+        if (coffee.Menge === "500") {
+            let wuerfel = parseInt(coffee.Zuckerwürfel);
+            let sahne = parseInt(coffee.Kaffeesahne);
+            coffee.Zucker = coffee.Zucker - wuerfel*3;
+            coffee.Zucker = coffee.Zucker - sahne*4;
+            coffee.Kalorien = coffee.Kalorien - wuerfel*12;
+            coffee.Kalorien = coffee.Kalorien - sahne*12;
+            console.log(coffee);
+            db.collection("coffee").add ({
+                Datum: new Date(),
+                Kaffee: coffee,
+                User: "Maurice"
+            });
+        }
     });
     let time = calculate(coffee.Behältnis, coffee.Menge, coffee.Starttemperatur, coffee.Umgebungstemperatur);
     onNavigate('/timer')
@@ -203,50 +251,50 @@ function calculate(behaelter, behaeltergroesse, startTemp, ambientTemp) {
     let thermalConduct;
     let thickness;
     let surfaceArea;
-        if (behaelter.equals("Pappbecher")) {
-            thermalConduct = 0.05;
-            thickness = 2;
-            if (behaeltergroesse.equals("250")) {
-                let grundflaeche = 50.27;
-                let schnittflaeche = 24.63;
-                let mantelflaeche = 198.67;
-                surfaceArea = grundflaeche + schnittflaeche + mantelflaeche;
-            }
-            if (behaeltergroesse.equals("500")) {
-                let grundflaeche = 62.21;
-                let schnittflaeche = 26.88;
-                let mantelflaeche = 301.2;
-                surfaceArea = grundflaeche + schnittflaeche + mantelflaeche;
-            }
+    if (behaelter === "Becher") {
+        thermalConduct = 0.05;
+        thickness = 2;
+        if (behaeltergroesse === "250") {
+            let grundflaeche = 50.27;
+            let schnittflaeche = 24.63;
+            let mantelflaeche = 198.67;
+            surfaceArea = grundflaeche + schnittflaeche + mantelflaeche;
         }
-        if (behaelter.equals("Glas")) {
-            thermalConduct = 1;
-            thickness = 2.4;
-            if (behaeltergroesse.equals("250")) {
-                surfaceArea = 175.18;
-            }
-            if (behaeltergroesse.equals("500")) {
-                surfaceArea = 297.54;
-            }
+        if (behaeltergroesse === "500") {
+            let grundflaeche = 62.21;
+            let schnittflaeche = 26.88;
+            let mantelflaeche = 301.2;
+            surfaceArea = grundflaeche + schnittflaeche + mantelflaeche;
         }
-        if (behaelter.equals("Tasse")) {
-            thermalConduct = 1.5;
-            thickness = 6;
-            if (behaeltergroesse.equals("250")) {
-                surfaceArea = 175.18;
-            }
-            if (behaeltergroesse.equals("500")) {
-                surfaceArea = 297.54;
-            }
+    }
+    if (behaelter === "Glas") {
+        thermalConduct = 1;
+        thickness = 2.4;
+        if (behaeltergroesse === "250") {
+            surfaceArea = 175.18;
         }
-        let heatTransfered = (thermalConduct * surfaceArea + (parseInt(startTemp) - parseInt(ambientTemp))) / thickness;
-        let temperatureDiffrenceNeeded = parseInt(startTemp) - parseInt(ambientTemp);
-        let heatRequired;
-        if (behaeltergroesse.equals("250")) {
-            heatRequired = 250 * 4186 * temperatureDiffrenceNeeded;
+        if (behaeltergroesse === "500") {
+            surfaceArea = 297.54;
         }
-        if (behaeltergroesse.equals("500")) {
-            heatRequired = 500 * 4186 * temperatureDiffrenceNeeded;
+    }
+    if (behaelter === "Tasse") {
+        thermalConduct = 1.5;
+        thickness = 6;
+        if (behaeltergroesse === "250") {
+            surfaceArea = 175.18;
         }
-        return coffeeTime = heatRequired / heatTransfered;
+        if (behaeltergroesse === "500") {
+            surfaceArea = 297.54;
+        }
+    }
+    let heatTransfered = (thermalConduct * surfaceArea + (parseInt(startTemp) - parseInt(ambientTemp))) / thickness;
+    let temperatureDiffrenceNeeded = parseInt(startTemp) - parseInt(ambientTemp);
+    let heatRequired;
+    if (behaeltergroesse === "250") {
+        heatRequired = 250 * 4186 * temperatureDiffrenceNeeded;
+    }
+    if (behaeltergroesse === "500") {
+        heatRequired = 500 * 4186 * temperatureDiffrenceNeeded;
+    }
+    return coffeeTime = heatRequired / heatTransfered;
 }

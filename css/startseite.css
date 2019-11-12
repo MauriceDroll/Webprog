@@ -87,8 +87,17 @@
     margin-left: auto;
     margin-top: 2rem;
 }
+
 .invisible {
     visibility: hidden;
+}
+
+.inputfalse {
+    border: 1px solid red !important;
+}
+
+.inputfalse:focus {
+    outline: none;
 }
 
 label {
@@ -115,11 +124,12 @@ label {
     margin-right: unset;
 }
 
-@media screen and (max-width: 1440px) {
-    /*.würfelcontainer {*/
-    /*    width: 100%;*/
-    /*}*/
-    /*.sahnecontainer {*/
-    /*    width: 100%;*/
-    /*}*/
+#option1 {
+    border-right: 2px solid #ad8762;
+}
+
+@media screen and (max-width: 1378px){
+    .inputcontainer {
+        max-width: 60%;
+    }
 }

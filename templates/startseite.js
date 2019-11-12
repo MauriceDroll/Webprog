@@ -29,47 +29,47 @@ const startseite = '' +
                 '<input type="text" id="Behältnis" class="col-xl-8" disabled>' +
             '</div>' +
             '<div class="row">' +
-                '<label for="Kalorien" class="col-lg-12 col-xl-4">Kalorien</label>' +
-                '<input type="number" id="Kalorien" class="col-xl-8">' +
-            '</div>' +
-            '<div class="row">' +
-                '<label for="Koffeingehalt" class="col-lg-12 col-xl-4">Koffeingehalt</label>' +
-                '<input type="number" id="Koffeingehalt" class="col-xl-8">' +
-            '</div>' +
-            '<div class="row">' +
-                '<label for="Menge" class="col-lg-12 col-xl-4">Menge</label>' +
+                '<label for="Menge" class="col-lg-12 col-xl-4">Menge (ml)</label>' +
                 '<input type="text" id="Menge" class="col-xl-8" disabled>' +
             '</div>' +
             '<div class="row">' +
-                '<label for="Preis" class="col-lg-12 col-xl-4">Preis</label>' +
+                '<label for="Kalorien" class="col-lg-12 col-xl-4">Kalorien (kcal)</label>' +
+                '<input type="number" id="Kalorien" class="col-xl-8" disabled>' +
+            '</div>' +
+            '<div class="row">' +
+                '<label for="Zucker" class="col-lg-12 col-xl-4">Zucker (mg)</label>' +
+                '<input type="number" id="Zucker" class="col-xl-8" disabled>' +
+             '</div>' +
+            '<div class="row">' +
+                '<label for="Koffeingehalt" class="col-lg-12 col-xl-4">Koffeingehalt (mg)</label>' +
+                '<input type="number" id="Koffeingehalt" class="col-xl-8" disabled>' +
+            '</div>' +
+            '<div class="row">' +
+                '<label for="Preis" class="col-lg-12 col-xl-4">Preis (€)</label>' +
                 '<input type="number" id="Preis" class="col-xl-8">' +
             '</div>' +
             '<div class="row">' +
-                '<label for="Starttemperatur" class="col-lg-12 col-xl-4">Starttemperatur</label>' +
+                '<label for="Starttemperatur" class="col-lg-12 col-xl-4">Starttemperatur (°C)</label>' +
                 '<input type="number" id="Starttemperatur" class="col-xl-8">' +
             '</div>' +
             '<div class="row">' +
-                '<label for="Umgebungstemperatur" class="col-lg-12 col-xl-4">Umgebungstemperatur</label>' +
+                '<label for="Umgebungstemperatur" class="col-lg-12 col-xl-4">Umgebungstemperatur (°C)</label>' +
                 '<input type="number" id="Umgebungstemperatur" class="col-xl-8">' +
             '</div>' +
-            '<div class="row">' +
-                '<label for="Zucker" class="col-lg-12 col-xl-4">Zucker</label>' +
-                '<input type="number" id="Zucker" class="col-xl-8">' +
-            '</div>' +
             '<div class="row würfelcontainer">' +
-                '<label for="Zuckerwürfel" class="col-lg-12 col-xl-4">Zuckerwürfel</label>' +
+                '<label for="Zuckerwürfel" class="col-lg-12 col-xl-4">Zuckerwürfel (stk)</label>' +
                 '<input id="Zuckerwürfel" class="col-sm-6 col-xl-2" disabled>' +
                 '<a onclick="addWuerfel()" class="counterbutton col-sm-3 col-xl-3"><img src="../assets/add_circle-24px.svg"></a>' +
                 '<a onclick="removeWuerfel()" class="counterbutton col-sm-3 col-xl-3"><img src="../assets/remove_circle-24px.svg"></a>' +
             '</div>' +
             '<div class="row sahnecontainer">' +
-                '<label for="Kaffeesahne" id="sahnelabel" class="col-lg-12 col-xl-4">Kaffeesahne</label>' +
+                '<label for="Kaffeesahne" id="sahnelabel" class="col-lg-12 col-xl-4">Kaffeesahne (stk)</label>' +
                 '<input id="Kaffeesahne" class="col-sm-6 col-xl-2" disabled>' +
                 '<a onclick="addSahne()" class="counterbutton col-sm-3 col-xl-3"><img src="../assets/add_circle-24px.svg"></a>' +
                 '<a onclick="removeSahne()" class="counterbutton col-sm-3 col-xl-3"><img src="../assets/remove_circle-24px.svg"></a>' +
             '</div>' +
             '<div class="row">' +
-                '<button class="btn btn-success savecoffeebutton" onclick="saveCoffee()">Speichern</button>' +
+                '<button class="btn btn-success savecoffeebutton" onclick="validate()">Speichern</button>' +
             '</div>' +
         '</div>' +
     '</div>' +
