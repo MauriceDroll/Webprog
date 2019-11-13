@@ -8,7 +8,7 @@
     <script type="text/javascript" src="templates/timer.js"></script>
     <script type="text/javascript" src="templates/locator.js"></script>
     <script type="text/javascript" src="templates/statistik.js"></script>
-<!--    <script src="MapsApiKey"></script>-->
+    <!--    <script src="MapsApiKey"></script>-->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/global.css">
@@ -25,6 +25,11 @@
         <a href="#" onclick="onNavigate('/timer'); return false;" class="nav-item">Timer</a>
         <a href="#" onclick="onNavigate('/locator'); return false;" class="nav-item">Locator</a>
         <a href="#" onclick="onNavigate('/statistik'); return false;" class="nav-item">Statistik</a>
+    </div>
+    <div class="admincontainer">
+        <a id="admin" onclick="showButtons()"><img src="assets/build-24px.svg"></a>
+        <button id="fillDatabase" class="btn adminbutton" onclick="loadTestData()" hidden>Datenbank befüllen</button>
+        <button id="dropDatabase" class="btn adminbutton" onclick="dropDatabase()" hidden>Einträge löschen</button>
     </div>
 </nav>
 

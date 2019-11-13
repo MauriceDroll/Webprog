@@ -1,8 +1,8 @@
 const routes = {
-    '/' : startseite,
-    '/timer' : timer,
-    '/locator' : locator,
-    '/statistik' : statistik,
+    '/': startseite,
+    '/timer': timer,
+    '/locator': locator,
+    '/statistik': statistik,
 };
 
 const rootDiv = document.getElementById('root');
@@ -19,4 +19,10 @@ const onNavigate = (pathname) => {
         rootDiv.innerHTML = routes[window.location.pathname]
     }
 };
+
+function showButtons() {
+    document.getElementById("admin").setAttribute("hidden", "");
+    document.getElementById("fillDatabase").removeAttribute("hidden");
+    document.getElementById("dropDatabase").removeAttribute("hidden");
+}
 
