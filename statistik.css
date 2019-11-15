@@ -1,0 +1,49 @@
+canvas{
+    height: 500px !important;
+    width:80% !important;
+    margin: auto;
+}
+#Buttongroup{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#koffein{
+    color:black;
+    background-color: white;
+    margin-left:10px;
+    margin-right:10px;
+}
+#zucker{
+    color:black;
+    background-color: white;
+    margin-left:10px;
+    margin-right:10px;
+}
+#kosten{
+    color:black;
+    background-color: white;
+    margin-left:10px;
+    margin-right:10px;
+}
+#anzahl{
+    color:black;
+    background-color: white;
+    margin-left:10px;
+    margin-right:10px;
+}
+#Inputgroup{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#Inputfeld{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
