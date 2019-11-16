@@ -1,19 +1,23 @@
 const statistik = '' +  
-    '<div id="Buttongroup">'+ 
-    '<button class="btn btn-primary btn-lg" onClick=selectChartType("Koffein") id= koffein> Koffein </button>'+
-    '<button class="btn btn-secondary btn-lg" onClick=selectChartType("Zucker") id= zucker> Zuckergehalt </button>'+
-    '<button class="btn btn-success btn-lg" onClick=selectChartType("Kosten") id= kosten> Kosten </button>'+
-    '<button class="btn btn-danger btn-lg" onClick=selectChartType("Anzahl") id= anzahl> Anzahl </button>'+
+    '<div class="btn-group btn-group-toggle statistikcontainer" data-toggle="buttons">' +
+        '<label class="btn btn-primary statistikbutton" id="option-1">' +
+            '<input type="radio" name="options" autocomplete="off" onclick="createCoffeineChart()">Koffein' +
+        '</label>'+
+        '<label class="btn btn-primary statistikbutton" id="option-2">' +
+            '<input type="radio" name="options" autocomplete="off" onclick="createSugarChart()">Zuckergehalt' +
+        '</label>'+
+        '<label class="btn btn-primary statistikbutton" id="option-3">' +
+            '<input type="radio" name="options" autocomplete="off" onclick="createCostChart()">Kosten' +
+        '</label>'+
+        '<label class="btn btn-primary statistikbutton" id="option-4">' +
+            '<input type="radio" name="options" autocomplete="off" onclick="createAmountChart()">Anzahl' +
+        '</label>'+
+    '</div>'+
+    '<div class="grenzwertcontainer">'+
+        '<input type="number" placeholder= "Eigener Grenzwert" id=userdefined> '+
     '</div>'+
     '<style onload="initalDataLoad()"></style>'+
-/*     '<div id="Inputgroup">'+
-    '<h8> Ben. Maximalwerte pro Kategorie'+
-    '<input type = "number" size="10" id= "maxKoffein" </input>'+
-    '<input type = "number" id= "maxZucker" </input>'+
-    '<input type = "number" id= "maxKosten" </input>'+
-    '<input type = "number" id= "maxAnzahl" </input>'+
-    '</div>'+ */
-    '<canvas id="Koffein"> </canvas>'+
-    '<canvas id="Zucker"> </canvas>'+
-    '<canvas id="Kosten"> </canvas>'+
-    '<canvas id="Anzahl"> </canvas>';
+    '<canvas id="Koffein"></canvas>'+
+    '<canvas id="Zucker"></canvas>'+
+    '<canvas id="Kosten"></canvas>'+
+    '<canvas id="Anzahl"></canvas>';

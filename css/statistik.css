@@ -1,8 +1,46 @@
 canvas{
-    height: 500px !important;
+    height: 600px !important;
     width:80% !important;
     margin: auto;
 }
+
+.statistikbutton {
+    background-color: white;
+    color: black;
+    border: none;
+    max-width: 120px;
+}
+
+.statistikcontainer {
+margin: 3rem auto;
+    display: flex;
+    justify-content: center;
+}
+
+.grenzwertcontainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+#userdefined {
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    padding: .375rem .75rem;
+}
+
+#option-1 {
+    border-right: 2px solid #ad8762;
+}
+
+#option-2 {
+    border-right: 2px solid #ad8762;
+}
+
+#option-3 {
+    border-right: 2px solid #ad8762;
+}
+
 #Buttongroup{
     text-align: center;
     margin-top: 30px;

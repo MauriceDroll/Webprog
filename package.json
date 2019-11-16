@@ -4,8 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "build": "npm install && live-server",
-    "start": "live-server"
+    "build": "npm install && npm run start",
+    "start": "live-server --entry-file=index.html"
   },
   "repository": {
     "type": "git",
