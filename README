@@ -1,7 +1,21 @@
-Projekt Setup:
-    1. Schritt: Projektordner in Entwicklungsumgebung öffnen
-    2. Schritt: Überprüfen ob npm installiert ist mit npm -v im terminal --> falls nicht https://nodejs.org/de/
-    3. Schritt: Im Terminal npm run build ausführen
+Coffee Companion
 
-Start: npm start
-Webserver Stop: strg + c und dann j oder y
+Funktionalitäten:
+    Startseite:
+        - Hinzufügen von getrunkenen Kaffees zu einer Datenbank
+        - Bereitstellung der Daten für die anderen Funktionalitäten
+
+    Timer:
+        - Anzeigen der verbleibenden Zeit bis der auf der Startseite angegebene Kaffee kalt ist
+
+    Locator:
+        - Suche nach Cafés im Umkreis der angegebenen Adresse via Google Maps API
+
+    Statistik:
+        - Grafische Darstellung der Daten aus der Datenbank
+        - Auswahl verschiedener Diagramme
+        - Festlegung eines eigenen Grenzwerts
+
+Zusätzliche Bemerkungen:
+    Die Statistikseite zeigt nur die Daten der letzten 7 Tage. Für Test- und Demozwecke stehen Funktionalitäten bereit, um schnell entsprechende Zufallseinträge zu generieren.
+    Siehe dazu das Symbol rechts in der Navbar.
