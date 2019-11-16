@@ -85,7 +85,9 @@ function updateNumber (element, number) {
 }
 
 function timerReachedZero(){
-  document.getElementById('alert').play();
+  if(!document.getElementById("mute").checked){
+    document.getElementById('alert').play();
+  }
 }
 
 
@@ -127,7 +129,9 @@ function updateOtherTimer(timerid){
   let t= document.getElementById(timerid).textContent
   if(t==null || t=="" || t=="0:0"){
     if(t=="0:0"){
-      document.getElementById('alert').play();
+      if(!document.getElementById("mute").checked){
+        document.getElementById('alert').play();
+      }
       document.getElementById(timerid).textContent=""
       timerCount--;
     }

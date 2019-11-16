@@ -32,6 +32,7 @@ const timer = '' +
   '<style onload="timeHelper()"></style>'+
   '<p><br/><br/><audio id="alert" src="../assets/peep.mp3" preload="auto"></audio></p>'+
   '<div class="center"><p>Erinnere mich nach <input id="reminderTime" type="time" value="05:00"></input> Minuten noch einmal.<button onClick="addTimer()">OK</button></p></div>'+
+  '<div class="center"><input id="mute" value="1" type="checkbox">Alarm stumm schalten</input></div>'+
   '<div class="center" id="timer1"></div>'+
   '<div class="center" id="timer2"></div>'+
   '<div class="center" id="timer3"></div>'+
