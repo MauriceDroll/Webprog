@@ -7,6 +7,7 @@ Funktionalitäten:
 
     Timer:
         - Anzeigen der verbleibenden Zeit bis der auf der Startseite angegebene Kaffee kalt ist
+        - Zusätzliche Timer zur Erinnerung setzen
 
     Locator:
         - Suche nach Cafés im Umkreis der angegebenen Adresse via Google Maps API
