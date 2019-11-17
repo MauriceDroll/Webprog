@@ -1,3 +1,5 @@
+let time;
+
 function becher() {
     let behaeltnis = document.getElementById('Behältnis');
     behaeltnis.value = "Becher";
@@ -236,7 +238,6 @@ function saveCoffee() {
             coffee.Kalorien = coffee.Kalorien - wuerfel*12;
             coffee.Kalorien = coffee.Kalorien - sahne*12;
             coffee.Preis = 0;
-            console.log(coffee);
             db.collection("coffee").add ({
                 Datum: new Date(),
                 Kaffee: coffee,
@@ -244,8 +245,13 @@ function saveCoffee() {
             });
         }
     });
-    let time = calculate(coffee.Behältnis, coffee.Menge, coffee.Starttemperatur, coffee.Umgebungstemperatur);
-    onNavigate('/timer')
+
+    if (document.getElementById("timercheckbox").checked) {
+        time = calculate(coffee.Behältnis, coffee.Menge, coffee.Starttemperatur, coffee.Umgebungstemperatur);
+        onNavigate('/timer')
+    } else {
+        alert("Kaffee wurde gespeichert")
+    }
 }
 
 function calculate(behaelter, behaeltergroesse, startTemp, ambientTemp) {
@@ -297,5 +303,5 @@ function calculate(behaelter, behaeltergroesse, startTemp, ambientTemp) {
     if (behaeltergroesse === "500") {
         heatRequired = 500 * 4186 * temperatureDiffrenceNeeded;
     }
-    return coffeeTime = heatRequired / heatTransfered;
+    return parseInt(heatRequired / heatTransfered, 10);
 }

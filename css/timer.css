@@ -1,0 +1,157 @@
+input[type=time] {
+  -webkit-appearance: textfield;
+  border: none;
+  border-radius: 0.25rem;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-left: 8px;
+}
+
+.timercontainer {
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.newtimercontainer {
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.mutecontainer {
+  vertical-align: middle;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.newtimerbutton {
+  max-width: fit-content;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 2rem;
+  background-color: white;
+  color: black;
+  border: none;
+}
+
+.additionaltimercontainer {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: fit-content;
+  margin-top: 1rem;
+}
+
+.verticalalign {
+  margin-top: 0.3rem;
+  margin-right: 0.3rem;
+}
+
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+.clock {
+    margin: auto;
+    width: 310px;
+    text-align: center;
+    height: 15vh;
+    color: black;
+    font-size: 13vh;
+    font-family: sans-serif;
+    line-height: 20.4vh;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+.clock > div {
+    display: flex;
+}
+
+.tick {
+    line-height: 17vh;
+}
+
+.tick-hidden {
+    opacity: 0;
+}
+
+.move {
+    animation: move linear 1s infinite;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes move {
+    from {
+        transform: translateY(0vh);
+    }
+    to {
+        transform: translateY(-20vh);
+    }
+}
+  

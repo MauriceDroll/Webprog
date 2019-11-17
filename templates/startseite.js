@@ -68,7 +68,9 @@ const startseite = '' +
                 '<a onclick="addSahne()" class="counterbutton col-sm-3 col-xl-3"><img src="../assets/add_circle-24px.svg"></a>' +
                 '<a onclick="removeSahne()" class="counterbutton col-sm-3 col-xl-3"><img src="../assets/remove_circle-24px.svg"></a>' +
             '</div>' +
-            '<div class="row">' +
+            '<div class="row lastcontainer">' +
+                '<input type="checkbox" id="timercheckbox">' +
+                '<label for="timercheckbox">Timer stellen</label>' +
                 '<button class="btn btn-success savecoffeebutton" onclick="validate()">Speichern</button>' +
             '</div>' +
         '</div>' +

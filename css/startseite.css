@@ -84,7 +84,13 @@
 }
 
 .savecoffeebutton {
-    margin: 4rem auto 6rem;
+    margin-left: 1rem;
+}
+
+.lastcontainer {
+    justify-content: center;
+    margin-top: 4rem !important;
+    margin-bottom: 6rem !important;
 }
 
 .invisible {
@@ -116,6 +122,10 @@ label {
 #glasimg {
     height: 100px;
     width: 100px;
+}
+
+#timercheckbox {
+    height: unset;
 }
 
 #hidden {
